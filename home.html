@@ -17,14 +17,15 @@
     <script src="js/foundation/foundation.topbar.js" type="application/javascript"></script>
     <script src="js/foundation/foundation.orbit.js" type="application/javascript"></script>
     <script src="js/foundation/foundation.reveal.js" type="application/javascript"></script>
+    <script src="js/foundation/foundation.abide.js" type="application/javascript"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>
 
     <style>
         .owl-item{
-            width: 1000px;
+            /*width: 1000px;*/
         }
         .owl-item > img{
-            height: 400px;
+            height: 450px;
         }
     </style>
 </head>
@@ -34,7 +35,7 @@
         <img src="img/logo_2049114_web.jpg" height="150" width="150" class="left">
     </div>
     <div class="large-6 small-4 columns ">
-        <a data-reveal-id="myModal" class="button medium radius right" style="margin-top:30px;font-weight: bold;">SIGN-UP HERE</a>
+        <a data-reveal-id="myModal" class="button medium radius right" style="margin-top:30px;">SIGN-UP HERE</a>
     </div>
 </div>
 <div class="row" style="border-bottom: 1px solid #e31e24;">
@@ -86,10 +87,10 @@
 </div>
 <div class="row" style="margin-top:10px;">
     <div class="large-12 medium-6 small-4 columns owl-carousel">
-        <div class="owl-item"><img src="img/PARALLEL-13"></div>
-        <div class="owl-item"><img src="img/PARALLEL-18"></div>
-        <div class="owl-item"><img src="img/PARALLEL-20"></div>
-        <div class="owl-item"><img src="img/PARALLEL-22"></div>
+        <div class="owl-item"><img src="img/wall-1.jpg"></div>
+        <div class="owl-item"><img src="img/wall-2.jpg"></div>
+        <div class="owl-item"><img src="img/wall-3.jpg"></div>
+        <div class="owl-item"><img src="img/wall-4.jpg"></div>
     </div>
 </div>
 
@@ -105,15 +106,61 @@
 
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <div class="row">
-        <div class="large-4 medium-4 small-4 columns">
-            <p style="color: rgba(227,30,36,1);font-weight: bold;">Welcome to pickmyproject.com</p>
-            <p >Glad to have you here. Please register</p>
-        </div>
-        <div class="large-8 small-4 columns">
-            <p style="color: rgba(227,30,36,1);font-weight: bold;">Sign Up/Register Here</p>
+        <div class="large-12 medium-6 small-4 columns">
+            <p style="color: rgba(227,30,36,1);font-weight: bold;">Sign Up/Register @ pickmyproject.com</p>
             <hr>
+            <form data-abide>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-torsos-all"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Your Name">
+                        <small class="error">Name is required and must be a string.</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-address-book"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="email" required placeholder="Enter Your Email Adddress">
+                        <small class="error">An email address is required.</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-lock"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="password" required placeholder="Enter Password">
+                        <small class="error">Password is required</small>
+                    </div>
+                </div>
+                 <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-mobile"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="number" required placeholder="Enter Mobile Number">
+                        <small class="error">Phone Number is required</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="large-12 medium-6 small-4 columns">
+                        <button type="submit" class="button radius expand">REGISTER</button>
+                        <p class="text-center">(or)</p>
+                        <a class="facebook button radius expand split no-pip"><span><i style="font-size: 35px;" class="fi-social-facebook"></i></span>sign in with Facebook</a>
+                        <a class="google button radius expand split no-pip"><span><i style="font-size: 35px;" class="fi-social-google-plus"></i></span>sign in with Google+</a>
+                        <a class="twitter button radius expand split no-pip"><span><i style="font-size: 35px;" class="fi-social-twitter"></i></span>sign in with Twitter</a>
+                    </div>
 
+                </div>
+            </form>
         </div>
+    </div>
+    <div class="row">
+
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>

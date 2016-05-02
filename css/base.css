@@ -6,6 +6,7 @@
     color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    font-weight: bold;
 }
 #left-navigation >li >a{
     background: white;
@@ -40,4 +41,24 @@ body{
     color: black;
     font-family: 'Roboto', sans-serif;
     background: white;
+}
+i{
+    /*color: rgba(227,30,36,1);*/
+    font-size: 25px;
+}
+span.prefix{
+    background: white;
+    /*border: none;*/
+}
+.reveal-modal{
+    width: 40%;
+}
+.facebook{
+    background-color: #3b5998;
+}
+.google{
+   background-color: #d50f25;
+}
+.twitter{
+   background-color:#55acee;
 }
