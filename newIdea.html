@@ -2,10 +2,364 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>PickMyProject</title>
+    <link href="css/foundation.css" rel="stylesheet" type="text/css">
+    <link href="css/foundation.min.css" rel="stylesheet" type="text/css">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="foundation-icons/foundation-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <script src="js/vendor/jquery.js" type="application/javascript"></script>
+    <script src="js/foundation/foundation.js" type="application/javascript"></script>
+    <script src="js/foundation.min.js" type="application/javascript"></script>
+    <script src="js/foundation/foundation.topbar.js" type="application/javascript"></script>
+    <script src="js/foundation/foundation.orbit.js" type="application/javascript"></script>
+    <script src="js/foundation/foundation.reveal.js" type="application/javascript"></script>
+    <script src="js/foundation/foundation.abide.js" type="application/javascript"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+
+    <style>
+        .owl-item{
+            /*width: 1000px;*/
+        }
+        .owl-item > img{
+            height: 450px;
+        }
+    </style>
 </head>
 <body>
-<p>Srikanth</p>
+<div class="row">
+    <div class="large-6 small-4 columns">
+        <img src="img/logo_2049114_web.jpg" height="150" width="150" class="left">
+    </div>
+    <div class="large-6 small-4 columns ">
+        <a data-reveal-id="myModal" class="button medium radius right" style="margin-top:30px;">SIGN-UP HERE</a>
+    </div>
+</div>
+<div class="row" style="border-bottom: 1px solid #e31e24;">
+    <div class="large-12 columns">
+        <div class="sticky">
+            <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
+                <ul class="title-area">
+                    <li class="name">
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right" id="right-navigation">
+                        <li><a href="#">HOW WE WORK?</a></li>
+                        <li><a href="#">STUDENT LOGIN</a></li>
+                        <li class="active"><a href="newIdea.html">NEW PROJECT IDEA</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">CSE/IT PROJECTS</a>
+                            <ul class="dropdown">
+                                <li class="has-dropdown">
+                                    <a href="#">B.TECH/M.TECH</a>
+                                    <ul class="dropdown" id="btech-dropdown">
+                                        <li><a href="#">.NET projects</a></li>
+                                        <li><a href="javaProjectsList.html">JAVA projects</a></li>
+                                    </ul>
+                                </li>
+                                <!--<li class="has-dropdown">-->
+                                    <!--<a href="#">M.TECH</a>-->
+                                    <!--<ul class="dropdown" id="mtech-dropdown">-->
+                                        <!--<li><a href="#">.NET projects</a></li>-->
+                                        <!--<li><a href="#">JAVA projects</a></li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Left Nav Section -->
+                    <ul class="left" id="left-navigation">
+                        <li><a href="home.html"><i class="fi-home" style="font-size: 30px;color: rgba(227,30,36,.8);"></i></a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 medium-8 small-4 columns new_idea">
+        <fieldset>
+            <legend>Post Your Idea</legend>
+
+            <form action="" onsubmit="return validate();" data-abide>
+
+                <div class="row">
+                    <div class="small-8  columns">
+
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">Project Title</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="text" placeholder="Enter Your Project Title" required pattern="[a-zA-Z]+">
+                                    <small class="error">Project Title is required and must be a string.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">Category</label>
+                                </div>
+                                <div class="small-9 columns">
+
+                                    <select required="required" id="category-id" name="category">
+                                        <option value="None">None</option>
+                                        <option value="Cloud Computing">Cloud Computing</option>
+                                        <option value="Image Processing">Image Processing</option>
+                                        <option value="Networking">Networking</option>
+                                        <option value="Mobile Computing">Mobile Computing</option>
+                                        <option value="Distributed Systems">Distributed Systems</option>
+                                        <option value="Data Mining">Data Mining</option>
+                                        <option value="Secure Computing">Secure Computing</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+
+                                    <small class="error">Please choose the Your Category.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">Preferable Language</label>
+                                </div>
+                                <div class="small-4 columns">
+
+                                    <select required="required" id="select-Lang">
+                                        <option value="None">None</option>
+                                        <option value="Java">Java</option>
+                                        <option value="Dot Net">Dot Net</option>
+                                        <option value="Other">Other</option>
+
+                                    </select>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            $("#select-Lang").click(function(){
+                                                var lan=($( "#select-Lang option:selected" ).text());
+
+                                                if(lan=="Other"){
+
+                                                    $("#other").removeClass("hide");
+                                                }else{
+                                                    $("#other").addClass("hide");
+                                                }
+
+
+                                            });
+                                        });
+                                    </script>
+
+                                    <small class="error">Please choose the Your Category.</small>
+                                </div>
+                                <div class="small-5 columns hide"id="other" >
+                                    <input type="text"id="select-language"placeholder="Enter Your Preferable Language" required pattern="[a-zA-Z]+">
+                                    <small class="error" id="error1">Name is required and must be a string.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right ">Project Docs</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="file" name="file">
+                                    <small class="error">Choose file.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">Project Theam</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <textarea rows="5" placeholder="Enter Your Project Theam " required pattern="[a-zA-Z]+"></textarea>
+                                    <small class="error">Project Theam is required and must be a string.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    <legend>Contact Details</legend>
+
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">Name</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="text" placeholder="Enter Your Name" required pattern="[a-zA-Z]+">
+                                    <small class="error">Name is required and must be a string.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">Mobile No</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="number"id="mobile" placeholder="Enter Your Valid Mobile Number" required>
+                                    <small class="error">Mobile Number is required and must be a Number.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="email-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    <label class="right inline">E-Mail</label>
+                                </div>
+                                <div class="small-9 columns">
+                                    <input type="email"placeholder="Enter Your Valid E-Mail Id" required>
+                                    <small class="error">An email address is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-field">
+
+                            <div class="row">
+                                <div class="small-3 columns">
+
+                                </div>
+
+                                <div class="small-9 columns">
+
+                                    <button type="submit" class="button radius expand" >Submit Your Idea</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <div class="row">
+        <div class="large-12 medium-6 small-4 columns">
+            <p style="color: rgba(227,30,36,1);font-weight: bold;">Sign Up/Register @ pickmyproject.com</p>
+            <hr>
+            <form data-abide>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-torsos-all"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Your Name">
+                        <small class="error">Name is required and must be a string.</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-address-book"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="email" required placeholder="Enter Your Email Adddress">
+                        <small class="error">An email address is required.</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-lock"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="password" required placeholder="Enter Password">
+                        <small class="error">Password is required</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-3 large-2 columns">
+                        <span class="prefix"><i class="fi-mobile"></i></span>
+                    </div>
+                    <div class="small-9 large-10 columns">
+                        <input type="number" required placeholder="Enter Mobile Number">
+                        <small class="error">Phone Number is required</small>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="large-12 medium-6 small-4 columns">
+                        <button type="submit" class="button radius expand">REGISTER</button>
+                        <p class="text-center">(or)</p>
+                        <a class="facebook button radius expand split no-pip"><span><i style="font-size: 35px;" class="fi-social-facebook"></i></span>sign in with Facebook</a>
+                        <a class="google button radius expand split no-pip"><span><i style="font-size: 35px;" class="fi-social-google-plus"></i></span>sign in with Google+</a>
+                        <a class="twitter button radius expand split no-pip"><span><i style="font-size: 35px;" class="fi-social-twitter"></i></span>sign in with Twitter</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(document).foundation();
+        $('.owl-carousel').owlCarousel({
+            items:1,
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true,
+            responsiveClass:true
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    function validate(){
+        var valid=false;
+        var category=document.getElementById("category-id").value;
+        var languages=document.getElementById("select-Lang").value;
+        var mobile=document.getElementById("mobile").value;
+
+
+        if(category=="None"){
+            alert("Please Choose the Currect Category !")
+            return false;
+        }
+        else if(languages=="None"){
+            alert("Please Choose the Preferable Language !")
+            return false;
+        }else if(mobile.length!=10){
+            alert("Enter 10 Digits Valid Mobile Number !"+mobile.length)
+            return false;
+        }
+
+    }
+
+</script>
 
 </body>
 </html>
